@@ -24,16 +24,7 @@ class RequestManager
         'X-Wiselinks': state.data.render
         'X-Wiselinks-Referer': state.data.referer
 
-      dataType: "html"
-    ).done(
-      (data, status, xhr) ->
-        self._html_loaded($target, data, status, xhr)
-    ).fail(
-      (xhr, status, error) ->
-        self._fail($target, status, state, error, xhr.status, xhr.responseText)
-    ).always(
-      (data_or_xhr, status, xhr_or_error)->
-        self._always($target, status, state)
+      dataType: "js"
     )
 
   _normalize: (url) ->
