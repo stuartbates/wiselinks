@@ -18,14 +18,15 @@ class RequestManager
 
     # Perform XHtmlHttpRequest
     #
-    $.ajax(
-      url: state.url
-      headers:
-        'X-Wiselinks': state.data.render
-        'X-Wiselinks-Referer': state.data.referer
-
-      dataType: "js"
-    )
+    $.getScript(state.url)
+    # $.ajax(
+    #   url: state.url
+    #   headers:
+    #     'X-Wiselinks': state.data.render
+    #     'X-Wiselinks-Referer': state.data.referer
+    # 
+    #   dataType: "js"
+    # )
 
   _normalize: (url) ->
     return unless url?
